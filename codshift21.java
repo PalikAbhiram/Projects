@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-// Class to represent user's bank account
+
 class BankAccount {
     private double balance;
 
@@ -101,3 +101,4 @@ public class ATMInterface {
         }
     }
 }
+
