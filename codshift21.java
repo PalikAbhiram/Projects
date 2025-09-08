@@ -29,7 +29,6 @@ class BankAccount {
     }
 }
 
-// Class to represent the ATM machine
 class ATM {
     private BankAccount account;
 
@@ -101,4 +100,5 @@ public class ATMInterface {
         }
     }
 }
+
 
