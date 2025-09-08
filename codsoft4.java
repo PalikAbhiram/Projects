@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-// Represents an individual Student
+
 class Student implements Serializable {
     private String name;
     private int rollNumber;
@@ -20,12 +20,12 @@ class Student implements Serializable {
     public String toString() { return "Name: " + name + ", Roll Number: " + rollNumber + ", Grade: " + grade; }
 }
 
-// Manages the collection of students
+
 class StudentManagementSystem {
     private List<Student> students = new ArrayList<>();
     private String filename = "students.dat";
 
-    // Add a student
+
     public boolean addStudent(Student student) {
         for (Student s : students) {
             if (s.getRollNumber() == student.getRollNumber()) return false; // Duplicate
@@ -34,12 +34,12 @@ class StudentManagementSystem {
         return true;
     }
 
-    // Remove a student
+
     public boolean removeStudent(int rollNumber) {
         return students.removeIf(s -> s.getRollNumber() == rollNumber);
     }
 
-    // Search for a student
+   
     public Student searchStudent(int rollNumber) {
         for (Student s : students) {
             if (s.getRollNumber() == rollNumber) return s;
@@ -47,7 +47,7 @@ class StudentManagementSystem {
         return null;
     }
 
-    // Display all students
+   
     public void displayStudents() {
         if (students.isEmpty()) {
             System.out.println("No students found.");
@@ -58,7 +58,7 @@ class StudentManagementSystem {
         }
     }
 
-    // Edit a student's information
+  
     public boolean editStudent(int rollNumber, String newName, String newGrade) {
         Student s = searchStudent(rollNumber);
         if (s != null) {
@@ -69,7 +69,7 @@ class StudentManagementSystem {
         return false;
     }
 
-    // Read students from file
+
     @SuppressWarnings("unchecked")
     public void loadFromFile() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
@@ -79,7 +79,7 @@ class StudentManagementSystem {
         }
     }
 
-    // Write students to file
+  
     public void saveToFile() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             oos.writeObject(students);
@@ -193,3 +193,4 @@ public class StudentManagementApp {
         }
     }
 }
+
